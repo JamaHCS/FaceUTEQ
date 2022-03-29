@@ -13,7 +13,7 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <h1 th:text="#{index.register.today}">Register today!</h1>
+            <h1 th:text="#{index.register.today}">registrarse!</h1>
             <div class="form-group">
                 <form th:action="@{/register}" th:object="${user}" method="POST" id="register">
 
@@ -22,7 +22,7 @@
                             <div>
                                 <!-- Check for registration error -->
                                 <div th:if="${registrationError}" class="alert alert-danger col-xs-offset-1 col-xs-10">
-                                    <p>User with such email has already been registered</p>
+                                    <p>Este correo ya se ha ocupado</p>
                                 </div>
 
                             </div>
@@ -31,7 +31,7 @@
 
                     <div class="form-group">
                         <label for="register_firstName">
-                            <span th:text="#{firstName}">First name</span>: <input type="text" th:field="*{firstName}" name="register_firstName" class="form-control" id="register_firstName" required/>
+                            <span th:text="#{firstName}">Nombre</span>: <input type="text" th:field="*{firstName}" name="register_firstName" class="form-control" id="register_firstName" required/>
                         </label>
                         <div class="help-block register_firstName_error hidden">Please, provide valid first name</div>
                         <div th:if="${#fields.hasErrors('firstName')}" style="margin-bottom: 25px" class="text-danger">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label for="register_lastName">
-                            <span th:text="#{lastName}">Last name</span>: <input type="text" th:field="*{lastName}" name="register_lastName" class="form-control" id="register_lastName" required/>
+                            <span th:text="#{lastName}">Apellidos</span>: <input type="text" th:field="*{lastName}" name="register_lastName" class="form-control" id="register_lastName" required/>
                         </label>
                         <div class="help-block register_lastName_error hidden">Please, provide valid last name</div>
                         <div th:if="${#fields.hasErrors('lastName')}" style="margin-bottom: 25px" class="text-danger">
@@ -64,9 +64,9 @@
                     </div>
                     <div class="form-group">
                         <label for="register_password">
-                            <span th:text="#{index.password}">Password</span>: <input type="password" th:field="*{password}" name="register_password" class="form-control register_password" id="register_password" required/>
+                            <span th:text="#{index.password}">Contraseña</span>: <input type="password" th:field="*{password}" name="register_password" class="form-control register_password" id="register_password" required/>
                         </label>
-                        <div class="help-block register_password_error hidden">Please, use all characters: letters and numbers at least once, minimum 6 symbols</div>
+                        <div class="help-block register_password_error hidden">La contraseña debe de tener al menos 6 caracteres y debe de usar letras y números. No se admiten carácteres especiales.</div>
                         <div th:if="${#fields.hasErrors('password')}" style="margin-bottom: 25px" class="text-danger">
                             <ul>
                                 <li th:each="err : ${#fields.errors('password')}" th:text="'Password ' + ${err}" />
@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <label for="register_password_confirm">
-                            <span th:text="#{index.confirm.password}">Confirm Password</span>: <input type="password" th:field="*{passwordConfirmation}" name="register_password_confirm" class="form-control register_password_confirm" id="register_password_confirm" required/>
+                            <span th:text="#{index.confirm.password}">Confirmar contraseña</span>: <input type="password" th:field="*{passwordConfirmation}" name="register_password_confirm" class="form-control register_password_confirm" id="register_password_confirm" required/>
                         </label>
                         <div class="help-block register_password_confirm_error hidden">Passwords don't match</div>
                         <div th:if="${#fields.hasErrors('passwordConfirmation')}" style="margin-bottom: 25px" class="text-danger">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" value="Register &raquo" class="btn btn-lg btn-success register_submit"/>
+                        <input type="submit" name="submit" value="registrar" class="btn btn-lg btn-success register_submit"/>
                     </div>
                 </form>
             </div>

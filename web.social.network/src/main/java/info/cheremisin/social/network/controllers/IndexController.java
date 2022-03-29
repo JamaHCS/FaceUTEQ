@@ -39,6 +39,7 @@ public class IndexController {
     @PostMapping("/register")
     public String registerUser(@Valid @ModelAttribute("user") UserDTO userDTO, BindingResult bindingResult,
             Model model) {
+
         if (bindingResult.hasErrors()) {
             return "index";
         }
