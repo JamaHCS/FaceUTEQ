@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Password {
-    String message() default "Invalid password";
+    String message() default "Contraseña invalida";
 
     Class<?>[] groups() default {};
 

@@ -45,6 +45,9 @@ public class User {
     @Column(name = "image")
     private String image;
 
+    @Column(name = "is_professor")
+    private Boolean isProfessor;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -64,4 +67,6 @@ public class User {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
 }

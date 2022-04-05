@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface ValidEmail {
-	String message() default "Invalid email";
+	String message() default "El correo debe de pertenecer a la UTEQ";
 
 	Class<?>[] groups() default {};
 

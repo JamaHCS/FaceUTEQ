@@ -25,10 +25,14 @@ public class UserDtoToUserConverter implements Converter<UserDTO, User> {
                                        .phone(userDTO.getPhone())
                                        .sex(Gender.getGenderByName(userDTO.getSex()))
                                        .image(userDTO.getImage())
-                                       .dob(userDTO.getDob());
+                                       .dob(userDTO.getDob()).isProfessor(userDTO.getIsProfessor());
 
         if (userDTO.getPassword() != null)
             builder.password(passwordEncoder.encode(userDTO.getPassword()));
+
+        builder.isProfessor(userDTO.getIsProfessor());
+
+        System.out.println(builder.build().toString());
 
         return builder.build();
     }
