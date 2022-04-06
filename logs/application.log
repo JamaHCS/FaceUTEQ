@@ -4930,3 +4930,6 @@ org.thymeleaf.exceptions.TemplateProcessingException: Expression "isProfessor" i
 13:34:27.656 DEBUG org.hibernate.SQL - select role0_.id as id1_2_, role0_.name as name2_2_ from role role0_ where role0_.name=?
 13:34:27.659 DEBUG org.hibernate.SQL - insert into user (date_of_birth, username, first_name, image, is_professor, last_name, password, phone, sex) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
 13:34:27.671 DEBUG org.hibernate.SQL - insert into user_role (user_id, role_id) values (?, ?)
+19:36:22.994 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h34m41s831ms253µs200ns).
+07:30:45.959 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11h54m22s965ms415µs699ns).
+09:13:27.818 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h39m40s227ms878µs900ns).
