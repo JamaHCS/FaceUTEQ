@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label for="register_email">
-                            <span th:text="#{email}">Email</span>: <input type="text" th:field="*{email}" name="register_email" class="form-control register_email" id="register_email" required/>
+                            <span th:text="#{email}">Email</span>: <input type="text" th:field="*{email}" name="register_email" class="form-control register_email" id="register_email" pattern="[\S+@\uteq.edu.mx]" required/>
                         </label>
                         <div class="help-block register_email_error hidden">Please, provide valid email</div>
                         <div th:if="${#fields.hasErrors('email')}" style="margin-bottom: 25px" class="text-danger">
@@ -83,6 +83,11 @@
                                 <li th:each="err : ${#fields.errors('passwordConfirmation')}" th:text="'Password confirmation ' + ${err}" />
                             </ul>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="is_professor">
+                            <span>¿Es profesor?</span>: <input type="checkbox" name="is_professor" class="form-control" th:field="*{isProfessor}" id="is_professor"/>
+                        </label>
                     </div>
                     <div class="form-group">
                         <input type="submit" name="submit" value="registrar" class="btn btn-lg btn-success register_submit"/>

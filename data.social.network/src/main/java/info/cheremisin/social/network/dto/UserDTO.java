@@ -19,7 +19,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldMatch.List({
-        @FieldMatch(first = "password", second = "passwordConfirmation", message = "Password fields must match")
+        @FieldMatch(first = "password", second = "passwordConfirmation", message = "Las contraseñas deben de coíncidir")
 })
 public class UserDTO {
 
@@ -30,20 +30,20 @@ public class UserDTO {
     private String email;
 
     @NotNull
-    @Size(min=6, max=100, message = "Min size is 6 and max size is 100")
+    @Size(min=6, max=100, message = "Debe de tener una longitud minima de 6 carácteres")
     @Password
     private String password;
 
     @NotNull
-    @Size(min=6, max=100, message = "Min size is 6 and max size is 100")
+    @Size(min=6, max=100, message = "Debe de tener una longitud minima de 6 carácteres")
     private String passwordConfirmation;
 
     @NotNull
-    @Size(min=2, max=100, message = "Min size is 2 and max size is 100")
+    @Size(min=2, max=100, message = "Debe de tener una longitud minima de 6 carácteres")
     private String firstName;
 
     @NotNull
-    @Size(min=2, max=100, message = "Min size is 2 and max size is 100")
+    @Size(min=2, max=100, message = "Debe de tener una longitud minima de 6 carácteres")
     private String lastName;
 
     @PastOrPresent
@@ -54,6 +54,7 @@ public class UserDTO {
     private String phone;
     private Boolean isAdmin;
     private String image;
+    private Boolean isProfessor;
 
     @Override
     public boolean equals(Object o) {

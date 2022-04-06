@@ -19,21 +19,21 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldMatch.List({
-        @FieldMatch(first = "password", second = "passwordConfirmation", message = "The password fields must match")
+        @FieldMatch(first = "password", second = "passwordConfirmation", message = "Las conrtaseñas deben de coíncidir")
 })
 public class PasswordChangeDTO {
 
     @NotNull
-    @Size(min=6, max=100, message = "Min size is 6 and max size is 100")
+    @Size(min=6, max=100, message = "Debe de contener mínimo 6 carácteres")
     @Password
     private String oldPassword;
 
     @NotNull
-    @Size(min=6, max=100, message = "Min size is 6 and max size is 100")
+    @Size(min=6, max=100, message = "Debe de contener mínimo 6 carácteres")
     @Password
     private String password;
 
     @NotNull
-    @Size(min=6, max=100, message = "Min size is 6 and max size is 100")
+    @Size(min=6, max=100, message = "Debe de contener mínimo 6 carácteres")
     private String passwordConfirmation;
 }
