@@ -36,7 +36,7 @@
                                 </tr>
                                 <tr th:if="${sessionUser.id != user.id}">
                                     <td>
-                                        <a th:href="@{'/user/conversation/' + ${user.id}}" href="#" class="btn btn-info">Message</a>
+                                        <a th:href="@{'/user/conversation/' + ${user.id}}" href="#" class="btn btn-info" style="display:none">Message</a>
                                     </td>
                                 </tr>
                             </table>

@@ -37,7 +37,7 @@
                             <span th:if="${user.sex.equals('FEMALE')}" th:text="#{gender.female}">Female</span>
                         </td>
                         <td>
-                            <a th:href="@{'/user/conversation/' + ${user.id}}" href="#" class="btn btn-info" th:text="#{message}">Message</a>
+                            <a th:href="@{'/user/conversation/' + ${user.id}}" href="#" class="btn btn-info" th:text="#{message}" style="display:none">Message</a>
                         </td>
                     </tr>
                 </table>

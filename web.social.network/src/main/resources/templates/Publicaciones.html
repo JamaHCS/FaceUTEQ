@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="template.html :: header('Users', false)"></head>
+
+<body th:with="sessionUser=${session.user}">
+<div th:replace="template.html :: navbar"></div>
+<hr/>
+
+<div class="container">
+    <div class="row">
+        <div th:replace="template.html :: menu"></div>
+
+        <div class="col-md-9">
+
+            <div id="layoutSidenav_content" style="background-color: #f5f7fb;">
+                <main>
+                    <div class="container-fluid px-4">
+
+
+                        <!--<h1 class="mt-4">Auditor&iacute;a profepa</h1>-->
+
+                        <!--<div class="d-flex justify-content-center" style="margin-top: 20%;" id="loading">
+                                <div class="spinner-grow text-info" style="width: 6rem; height: 6rem;" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                </div>
+                        </div>-->
+
+                        <div class="card" style="margin-top: 3em" id="main">
+                            <div class="card-body">
+
+                                <div class="card mt-3">
+                                    <div class="card-title mt-5">
+                                        Agregar publicación
+                                    </div>
+                                    <div class="card-body">
+                                        <form method="post" th:action="@{/insert}" enctype="multipart/form-data"
+                                              id="fileUploadForms" class="form-group">
+                                            <input name="publicacion" type="text" class="form-control"
+                                                   placeholder="Ingresa tu publicación">
+                                            <input name="url" type="text"
+                                                   data-theme="fas" class="form-control mt-2" style="margin-top: 0.5rem">
+                                            <input type="submit" value="Enviar" class="btn btn-primary mt-2" style="margin-top: 0.5rem">
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="card mt-3" data-th-each="p:${publicaciones}">
+                                    <br />
+                                    <hr />
+                                    <img th:if="${p.fotoPubl != null}" th:src="@{${p.fotoPubl}}" class="card-img-top"
+                                         style="width: auto; height: 400px;">
+                                    <div class="card-body">
+                                        <div class='float-start ms-2'
+                                             data-th-text="${p.usuario.firstName} == null ? ${p.usuario.firstName} + ' ' + ${p.usuario.firstName} : ${p.usuario.firstName} + ' ' + ${p.usuario.lastName}"></div>
+                                        <br>
+
+                                        <div class='float-start ms-2'
+                                             data-th-text="${#dates.format(p.faPubl, 'dd-MM-yyyy')}"></div>
+                                        <br>
+                                        <div data-th-text="${p.descPubl}"></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- All content -->
+
+<div th:replace="template.html :: footer"></div>
+
+</body>
+</html>
